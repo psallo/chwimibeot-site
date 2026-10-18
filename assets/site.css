@@ -1,0 +1,68 @@
+/* 취미벗 static site. No cookies, no analytics, no external resources. */
+:root {
+  --fg: #1b1f23; --muted: #4a5560; --bg: #ffffff; --soft: #f2f5f4;
+  --brand: #1E6B5A; --link: #1E6B5A; --line: #d6dde0; --warn-bg: #fff6e0; --warn-line: #e8c46a;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #eef2f1; --muted: #b8c3c0; --bg: #121615; --soft: #1c2321;
+    --brand: #7fd1bd; --link: #7fd1bd; --line: #2c3633; --warn-bg: #2a2416; --warn-line: #7a6430;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+  font-size: 19px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere;
+}
+main { max-width: 920px; margin: 0 auto; padding: 24px 16px 48px; }
+a { color: var(--link); }
+a:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+h1 { font-size: 30px; line-height: 1.3; margin: 8px 0 8px; }
+h2 { font-size: 24px; line-height: 1.35; margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+h3 { font-size: 21px; margin: 28px 0 10px; }
+p { margin: 8px 0; }
+ul, ol { padding-left: 1.3em; margin: 8px 0; }
+li { margin: 6px 0; }
+img { max-width: 100%; height: auto; }
+.top { display: flex; align-items: center; gap: 12px; font-size: 17px; }
+.top img { width: 40px; height: 40px; border-radius: 10px; }
+.top a { text-decoration: none; font-weight: 700; color: var(--fg); }
+.lead { font-size: 20px; }
+.muted, .note { color: var(--muted); font-size: 16px; }
+.box { background: var(--soft); border-radius: 14px; padding: 16px 18px; margin: 12px 0; }
+.warn { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 14px; padding: 14px 18px; margin: 12px 0; }
+.toc { background: var(--soft); border-radius: 14px; padding: 12px 18px; }
+.toc ol { margin: 4px 0; }
+/* Card list replaces wide tables (works at 360px). */
+.cards { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 10px; }
+.cards > li { margin: 0; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; background: var(--bg); }
+.cards .t { font-weight: 700; display: block; margin-bottom: 4px; }
+.cards dl { margin: 0; }
+.cards dt { color: var(--muted); font-size: 16px; margin-top: 6px; }
+.cards dd { margin: 0; }
+.badge { display: inline-block; padding: 1px 10px; border-radius: 999px; font-size: 15px; font-weight: 700; margin-left: 6px; vertical-align: 2px; }
+.req { background: #1E6B5A; color: #fff; }
+.opt { background: var(--soft); color: var(--fg); border: 1px solid var(--line); }
+.mail { font-size: 21px; font-weight: 700; }
+.steps li { margin: 10px 0; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 16px; color: var(--muted); }
+footer p { margin: 4px 0; }
+.shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 12px; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; border: 1px solid var(--line); border-radius: 14px; display: block; }
+.shots figcaption { font-size: 15px; color: var(--muted); margin-top: 6px; text-align: center; }
+.hero { display: flex; align-items: center; gap: 16px; }
+.hero img { width: 72px; height: 72px; border-radius: 18px; }
+.hero h1 { margin: 0; font-size: 32px; }
+.tag { display: inline-block; margin-top: 6px; padding: 4px 12px; border-radius: 999px; background: var(--soft); color: var(--muted); font-size: 16px; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.btn { display: inline-block; padding: 12px 18px; border-radius: 12px; border: 2px solid var(--brand); color: var(--brand); text-decoration: none; font-weight: 700; min-height: 48px; }
+.btn.primary { background: #1E6B5A; border-color: #1E6B5A; color: #fff; }
+@media (max-width: 720px) {
+  .shots { grid-template-columns: repeat(2, 1fr); }
+  h1, .hero h1 { font-size: 27px; }
+  h2 { font-size: 22px; }
+}
